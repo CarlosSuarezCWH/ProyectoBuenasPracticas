@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alumnos</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="my-4">Lista de Alumnos</h1>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido Paterno</th>
+                    <th>Apellido Materno</th>
+                    <th>Promedio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% alumnos.forEach(alumno => { %>
+                    <tr>
+                        <td><%= alumno.nombre %></td>
+                        <td><%= alumno.apellidopa %></td>
+                        <td><%= alumno.apellidoma %></td>
+                        <td><%= alumno.promedio %></td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+        <h2 class="my-4">Agregar Alumno</h2>
+        <form action="/alumnos" method="post">
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" class="form-control" id="nombre" name="nombre">
+            </div>
+            <div class="form-group">
+                <label for="apellidopa">Apellido Paterno:</label>
+                <input type="text" class="form-control" id="apellidopa" name="apellidopa">
+            </div>
+            <div class="form-group">
+                <label for="apellidoma">Apellido Materno:</label>
+                <input type="text" class="form-control" id="apellidoma" name="apellidoma">
+            </div>
+            <div class="form-group">
+                <label for="promedio">Promedio:</label>
+                <input type="number" class="form-control" id="promedio" name="promedio">
+            </div>
+            <button type="submit" class="btn btn-primary">Agregar</button>
+        </form>
+        <a href="/" class="btn btn-secondary mt-4">Volver a la página principal</a>
+    </div>
+</body>
+</html>
